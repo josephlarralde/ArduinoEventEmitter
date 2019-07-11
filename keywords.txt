@@ -1,0 +1,4 @@
+EventEmitter	KEYWORD1
+addListener	KEYWORD2
+removeListeners	KEYWORD2
+emit	KEYWORD2
