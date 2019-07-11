@@ -73,6 +73,15 @@ public:
     return removed;
   }
 
+  void removeAllListeners() {
+    for (unsigned int i = 0; i < EVENT_EMITTER_MAX_LISTENERS; ++i) {
+      if (listeners[i] != NULL) {
+        delete listeners[i];
+        nbListeners = 0;
+      }
+    }
+  }
+
   void emit(const char *name, T... t) {
     for (unsigned int i = 0; i < EVENT_EMITTER_MAX_LISTENERS; ++i) {
       if (listeners[i] != NULL &&
